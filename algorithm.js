@@ -19,7 +19,10 @@ myData.forEach(function (v) {
 
         var div = (x2 - x1)/(num - 1);
 
-        for(var i=x1; i<=x2; i+=div) {
+        for(var i=x1; i<x2+div; i+=div) {
+            if (i > x2) {
+                i = x2;
+            }
             xData.push(i);
             yData.push(func(i));
             xyData.push([i, func(i)]);
